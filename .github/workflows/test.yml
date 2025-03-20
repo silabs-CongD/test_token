@@ -3,6 +3,9 @@ name: test
 on:
   push:
 
+env:
+  GH_TOKEN: ${{ secrets.CODO_TOKEN }}
+          
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,5 +18,5 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: SiliconLabsSoftware/aep_ci_tools
-        token: ${{ secrets.CODO_TOKEN }}
+        token: ${{ env.GH_TOKEN }}
       
