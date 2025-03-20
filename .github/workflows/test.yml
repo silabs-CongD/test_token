@@ -7,6 +7,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-     - name: Test
-       run: |
-         echo ${{ env.CODO_TOKEN }}
+     # - name: Test
+     #   run: |
+     #     echo ${{ env.CODO_TOKEN }}
+
+    - name: Check out json ci repo
+      uses: actions/checkout@v4
+      with:
+        repository: SiliconLabsSoftware/aep_ci_tools
+        token: ${{ env.CODO_TOKEN }}
+      
